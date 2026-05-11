@@ -1,62 +1,103 @@
-import { Phone, Mail, MessageCircle, MapPin, CheckCircle, Sparkles } from "lucide-react";
+import { Phone, Mail, MessageCircle, MapPin, CheckCircle, Sparkles, ArrowRight, Star } from "lucide-react";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white text-slate-900">
+    <main className="min-h-screen bg-white text-slate-900 antialiased">
       {/* HERO */}
-      <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900 text-white py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-400/30 rounded-full px-4 py-1.5 text-sm font-medium text-emerald-300 mb-6">
+      <section className="relative min-h-[90vh] flex items-center justify-center bg-slate-950 text-white overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-emerald-900/40 via-slate-950 to-slate-950" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-950 to-transparent" />
+        
+        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
+          <div className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full px-5 py-2 text-sm font-semibold text-emerald-400 mb-8 backdrop-blur-sm">
             <MapPin className="w-4 h-4" />
-            Serving Vancouver & The North Shore
+            Vancouver, North Shore, Point Grey, Kerrisdale & Southlands
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
-            Driveway & Pressure Washing in<br className="hidden md:block" />
-            <span className="text-emerald-400">North Shore, Point Grey, Kerrisdale & Southlands</span>
+          
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[0.95] mb-8">
+            Blast the Grime.<br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">
+              Keep the Shine.
+            </span>
           </h1>
-          <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-            Local, reliable, fast. We blast away years of grime so your property looks brand new.
+          
+          <p className="text-xl md:text-2xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+            Driveway, patio, deck & commercial awning cleaning. Local crew. Same-day quotes. No calls required.
           </p>
-          <a
-            href="sms:+1604XXXXXXX?body=Hi! I need a free quote for pressure washing."
-            className="inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-bold text-lg px-8 py-4 rounded-xl transition-all shadow-lg shadow-emerald-500/25 hover:shadow-emerald-400/40 hover:-translate-y-0.5"
-          >
-            <MessageCircle className="w-6 h-6" />
-            Text for a Free Quote
-          </a>
-          <p className="text-sm text-slate-400 mt-4">Homeowners respond faster to texting. No calls needed.</p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a
+              href="sms:+1604XXXXXXX?body=Hi! I need a free quote for pressure washing."
+              className="group inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-lg px-10 py-5 rounded-2xl transition-all shadow-[0_0_40px_-10px_rgba(16,185,129,0.5)] hover:shadow-[0_0_60px_-10px_rgba(16,185,129,0.7)] hover:-translate-y-1"
+            >
+              <MessageCircle className="w-6 h-6" />
+              Text for Free Quote
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </a>
+            <a
+              href="tel:+1604XXXXXXX"
+              className="inline-flex items-center gap-3 bg-slate-800 hover:bg-slate-700 text-white font-bold text-lg px-10 py-5 rounded-2xl transition-all border border-slate-700 hover:border-slate-600"
+            >
+              <Phone className="w-5 h-5" />
+              Call (604) XXX-XXXX
+            </a>
+          </div>
+          
+          <p className="text-sm text-slate-500 mt-6">Most homeowners get a reply within 20 minutes.</p>
         </div>
       </section>
 
-      {/* BEFORE / AFTER */}
-      <section className="py-16 px-4 bg-slate-50">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-2">Real Results</h2>
-          <p className="text-center text-slate-500 mb-10">Pressure washing is visual proof. See the difference.</p>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-                <div className="h-48 bg-slate-200 flex items-center justify-center text-slate-400 font-medium">
-                  Before Photo {i}
-                </div>
-                <div className="h-48 bg-emerald-100 flex items-center justify-center text-emerald-700 font-medium border-t-4 border-emerald-500">
-                  After Photo {i}
-                </div>
-                <div className="p-4 text-center">
-                  <p className="font-semibold text-slate-700">Transformation #{i}</p>
-                  <p className="text-sm text-slate-500">Replace with your actual photos</p>
-                </div>
+      {/* BEFORE / AFTER — Real Photos */}
+      <section className="py-24 px-4 bg-slate-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-black mb-4">Real Results</h2>
+            <p className="text-lg text-slate-500 max-w-xl mx-auto">One treatment. Years of grime gone. This is why pressure washing sells itself.</p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Driveway Card */}
+            <div className="group bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <img 
+                  src="/images/driveway-ba.jpg" 
+                  alt="Driveway before and after pressure washing" 
+                  className="w-full h-full object-cover"
+                />
               </div>
-            ))}
+              <div className="p-6">
+                <h3 className="font-bold text-lg text-slate-800 mb-1">Driveway Restoration</h3>
+                <p className="text-sm text-slate-500">Moss, oil stains, years of buildup — erased in one session.</p>
+              </div>
+            </div>
+
+            {/* Awning Card */}
+            <div className="group bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <img 
+                  src="/images/awning-ba.png" 
+                  alt="Commercial awning before and after cleaning" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="font-bold text-lg text-slate-800 mb-1">Commercial Awning Revive</h3>
+                <p className="text-sm text-slate-500">Restaurant & retail awnings restored to original colour and shine.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* SERVICES */}
-      <section className="py-16 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-10">What We Clean</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <section className="py-24 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-black mb-4">What We Clean</h2>
+            <p className="text-lg text-slate-500">Residential & commercial. No job too dirty.</p>
+          </div>
+          
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
               "Driveways",
               "Sidewalks",
@@ -64,128 +105,195 @@ export default function Home() {
               "Garbage Bins",
               "Decks",
               "Fences",
+              "Walkways",
+              "Parking Pads",
+              "Stairs",
             ].map((service) => (
-              <div key={service} className="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-4">
-                <CheckCircle className="w-5 h-5 text-emerald-500 shrink-0" />
-                <span className="font-medium text-slate-700">{service}</span>
+              <div key={service} className="flex items-center gap-4 bg-slate-50 hover:bg-emerald-50 border border-slate-200 hover:border-emerald-200 rounded-2xl px-6 py-5 transition-colors group cursor-default">
+                <div className="bg-emerald-100 group-hover:bg-emerald-500 text-emerald-600 group-hover:text-white p-2.5 rounded-xl transition-colors">
+                  <CheckCircle className="w-5 h-5" />
+                </div>
+                <span className="font-bold text-slate-700 group-hover:text-emerald-900 transition-colors">{service}</span>
               </div>
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* AWNINGS — COMMERCIAL HIGHLIGHT */}
-          <div className="mt-8 bg-gradient-to-r from-amber-50 to-orange-50 border-2 border-amber-300 rounded-2xl p-8">
-            <div className="flex items-start gap-4">
-              <div className="bg-amber-500 text-white p-3 rounded-xl shrink-0">
-                <Sparkles className="w-6 h-6" />
+      {/* AWNINGS — THE MONEY SECTION */}
+      <section className="py-24 px-4 bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100 border-y-4 border-amber-400">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 bg-amber-500 text-white rounded-full px-4 py-1.5 text-sm font-bold mb-6 shadow-lg shadow-amber-500/20">
+                <Sparkles className="w-4 h-4" />
+                HIGHEST MARGIN SERVICE
               </div>
-              <div>
-                <h3 className="text-xl font-bold text-amber-900 mb-2">Awnings for Business — Our Specialty</h3>
-                <p className="text-amber-800 mb-4">
-                  Commercial awning cleaning is our highest-margin, most-requested service. We restore restaurant, retail, and office awnings without damaging fabric or signage. Keep your storefront inviting.
-                </p>
-                <a
-                  href="sms:+1604XXXXXXX?body=Hi! I need a commercial awning cleaning quote."
-                  className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors"
-                >
-                  <MessageCircle className="w-4 h-4" />
-                  Text for Commercial Quote
-                </a>
-              </div>
+              <h2 className="text-4xl md:text-5xl font-black text-amber-950 mb-6 leading-tight">
+                Awnings for Business
+              </h2>
+              <p className="text-lg text-amber-900/80 mb-6 leading-relaxed">
+                Restaurant, retail, and office awnings are your storefront's first impression. We clean fabric, vinyl, and metal awnings without damaging signage or colour. This is where the real profit lives.
+              </p>
+              <ul className="space-y-3 mb-8">
+                {[
+                  "No damage to fabric or stitching",
+                  "Removes mould, mildew & bird droppings",
+                  "Restores original colour & brightness",
+                  "Done before opening hours if needed"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-amber-900">
+                    <CheckCircle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="sms:+1604XXXXXXX?body=Hi! I need a commercial awning cleaning quote."
+                className="inline-flex items-center gap-3 bg-amber-500 hover:bg-amber-400 text-white font-black text-lg px-8 py-4 rounded-2xl transition-all shadow-xl shadow-amber-500/30 hover:shadow-amber-400/40 hover:-translate-y-0.5"
+              >
+                <MessageCircle className="w-6 h-6" />
+                Text for Commercial Quote
+              </a>
+            </div>
+            <div className="rounded-3xl overflow-hidden shadow-2xl border-2 border-amber-200">
+              <img 
+                src="/images/awning-ba.png" 
+                alt="Commercial awning transformation" 
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
       </section>
 
       {/* PRICING ANCHOR */}
-      <section className="py-16 px-4 bg-slate-900 text-white">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4">Simple, Honest Pricing</h2>
-          <p className="text-slate-300 mb-8">
-            Most driveway cleanings start around <span className="text-emerald-400 font-bold text-xl">$99 – $199</span> depending on size and condition.
-          </p>
-          <div className="grid sm:grid-cols-3 gap-4 text-left">
-            <div className="bg-slate-800 rounded-xl p-5 border border-slate-700">
-              <p className="text-2xl font-bold text-emerald-400 mb-1">$99+</p>
-              <p className="text-sm text-slate-400">Small driveways & walkways</p>
+      <section className="py-24 px-4 bg-slate-950 text-white">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-black mb-4">Simple, Honest Pricing</h2>
+            <p className="text-lg text-slate-400">No hidden fees. Quote after a quick text with photos.</p>
+          </div>
+          
+          <div className="grid sm:grid-cols-3 gap-6">
+            <div className="bg-slate-900 rounded-3xl p-8 border border-slate-800 hover:border-emerald-500/50 transition-colors">
+              <p className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-2">Small Jobs</p>
+              <p className="text-5xl font-black text-emerald-400 mb-4">$99</p>
+              <p className="text-slate-400 mb-6">Small driveways, walkways, garbage bins</p>
+              <div className="h-px bg-slate-800 mb-6" />
+              <ul className="space-y-2 text-sm text-slate-300">
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-emerald-500" /> Single driveway</li>
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-emerald-500" /> Walkway strip</li>
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-emerald-500" /> 2-3 garbage bins</li>
+              </ul>
             </div>
-            <div className="bg-slate-800 rounded-xl p-5 border border-slate-700">
-              <p className="text-2xl font-bold text-emerald-400 mb-1">$199+</p>
-              <p className="text-sm text-slate-400">Large driveways & patios</p>
+            
+            <div className="bg-slate-900 rounded-3xl p-8 border-2 border-emerald-500/30 relative overflow-hidden">
+              <div className="absolute top-0 right-0 bg-emerald-500 text-slate-950 text-xs font-black px-4 py-1 rounded-bl-xl">
+                MOST POPULAR
+              </div>
+              <p className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-2">Standard</p>
+              <p className="text-5xl font-black text-emerald-400 mb-4">$199</p>
+              <p className="text-slate-400 mb-6">Large driveways, patios, full walkways</p>
+              <div className="h-px bg-slate-800 mb-6" />
+              <ul className="space-y-2 text-sm text-slate-300">
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-emerald-500" /> Double driveway</li>
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-emerald-500" /> Full patio</li>
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-emerald-500" /> Deck cleaning</li>
+              </ul>
             </div>
-            <div className="bg-slate-800 rounded-xl p-5 border border-slate-700">
-              <p className="text-2xl font-bold text-amber-400 mb-1">Custom</p>
-              <p className="text-sm text-slate-400">Awnings, decks, commercial</p>
+            
+            <div className="bg-gradient-to-br from-amber-900/30 to-slate-900 rounded-3xl p-8 border border-amber-500/30 hover:border-amber-400/50 transition-colors">
+              <p className="text-sm font-bold text-amber-400 uppercase tracking-wider mb-2">Commercial</p>
+              <p className="text-5xl font-black text-amber-400 mb-4">Custom</p>
+              <p className="text-slate-400 mb-6">Awnings, storefronts, multi-unit</p>
+              <div className="h-px bg-slate-800 mb-6" />
+              <ul className="space-y-2 text-sm text-slate-300">
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-amber-500" /> Awning restoration</li>
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-amber-500" /> Restaurant facades</li>
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-amber-500" /> Scheduled maintenance</li>
+              </ul>
             </div>
           </div>
-          <p className="text-sm text-slate-500 mt-6">Exact quote after a quick text with photos. No hidden fees.</p>
         </div>
       </section>
 
       {/* TRUST */}
-      <section className="py-16 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-10">Why Homeowners Trust Us</h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <section className="py-24 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-black mb-4">Why Homeowners Trust Us</h2>
+            <p className="text-lg text-slate-500">Local crew. Real results. No BS.</p>
+          </div>
+          
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {[
-              { label: "Local", desc: "Vancouver born & raised" },
-              { label: "Reliable", desc: "Show up on time, every time" },
-              { label: "Fast Response", desc: "Text back within the hour" },
-              { label: "Insured", desc: "Full coverage, zero risk" },
+              { label: "Local", desc: "Born & raised Vancouver. We know the mould." },
+              { label: "Reliable", desc: "We show up. On time. Every time." },
+              { label: "Fast Response", desc: "Text back within 20 minutes, guaranteed." },
+              { label: "Insured", desc: "Full liability coverage. Zero risk to you." },
             ].map((item) => (
-              <div key={item.label} className="bg-slate-50 rounded-xl p-6 border border-slate-200">
-                <CheckCircle className="w-8 h-8 text-emerald-500 mx-auto mb-3" />
-                <p className="font-bold text-slate-800">{item.label}</p>
-                <p className="text-sm text-slate-500 mt-1">{item.desc}</p>
+              <div key={item.label} className="bg-slate-50 rounded-2xl p-8 border border-slate-100 text-center hover:border-emerald-200 hover:shadow-lg transition-all">
+                <div className="bg-emerald-100 text-emerald-600 w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle className="w-7 h-7" />
+                </div>
+                <p className="font-bold text-lg text-slate-800 mb-2">{item.label}</p>
+                <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
 
           {/* TESTIMONIAL PLACEHOLDER */}
-          <div className="mt-10 bg-white border-2 border-dashed border-slate-300 rounded-2xl p-8 text-center">
-            <p className="text-slate-400 font-medium">⭐ Testimonial Section</p>
-            <p className="text-sm text-slate-400 mt-1">Add your first review here once you complete a job. Even one review converts.</p>
+          <div className="bg-gradient-to-r from-slate-50 to-slate-100 border-2 border-dashed border-slate-300 rounded-3xl p-12 text-center">
+            <Star className="w-10 h-10 text-slate-300 mx-auto mb-4" />
+            <p className="text-slate-500 font-bold text-lg mb-2">Testimonial Section</p>
+            <p className="text-slate-400 max-w-md mx-auto">Complete your first job, screenshot the text review, and paste it here. Even one 5-star review doubles conversion.</p>
           </div>
         </div>
       </section>
 
       {/* CONTACT */}
-      <section className="py-16 px-4 bg-emerald-900 text-white">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6">Get Your Free Quote Today</h2>
-          <p className="text-emerald-200 mb-8">Text is fastest. We reply within the hour.</p>
+      <section className="py-24 px-4 bg-emerald-950 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-emerald-800/30 via-emerald-950 to-emerald-950" />
+        
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl md:text-6xl font-black mb-6">Get Your Free Quote</h2>
+          <p className="text-xl text-emerald-200 mb-10 max-w-2xl mx-auto">Send a text with your address and a photo. We'll reply with a firm price — no upsells, no surprises.</p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <a
-              href="sms:+1604XXXXXXX?body=Hi! I need a free pressure washing quote."
-              className="inline-flex items-center justify-center gap-3 bg-white text-emerald-900 font-bold text-lg px-8 py-4 rounded-xl hover:bg-emerald-50 transition-colors"
+              href="sms:+1604XXXXXXX?body=Hi! I need a free pressure washing quote. My address is: "
+              className="group inline-flex items-center justify-center gap-3 bg-white text-emerald-950 font-black text-xl px-10 py-5 rounded-2xl hover:bg-emerald-50 transition-all shadow-2xl hover:-translate-y-1"
             >
-              <MessageCircle className="w-6 h-6" />
+              <MessageCircle className="w-7 h-7" />
               Text: (604) XXX-XXXX
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
             <a
               href="tel:+1604XXXXXXX"
-              className="inline-flex items-center justify-center gap-3 bg-emerald-800 text-white font-bold text-lg px-8 py-4 rounded-xl hover:bg-emerald-700 transition-colors border border-emerald-600"
+              className="inline-flex items-center justify-center gap-3 bg-emerald-900 text-white font-bold text-xl px-10 py-5 rounded-2xl hover:bg-emerald-800 transition-colors border border-emerald-700"
             >
               <Phone className="w-6 h-6" />
               Call Now
             </a>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center text-emerald-200">
+          <div className="flex flex-col sm:flex-row gap-8 justify-center items-center text-emerald-300/80 text-sm">
             <a href="mailto:youremail@example.com" className="flex items-center gap-2 hover:text-white transition-colors">
-              <Mail className="w-5 h-5" />
+              <Mail className="w-4 h-4" />
               youremail@example.com
             </a>
+            <span className="hidden sm:inline text-emerald-700">|</span>
             <a href="https://tiktok.com/@yourhandle" target="_blank" className="flex items-center gap-2 hover:text-white transition-colors">
-              <MessageCircle className="w-5 h-5" />
-              TikTok
+              <MessageCircle className="w-4 h-4" />
+              TikTok: @yourhandle
             </a>
           </div>
         </div>
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-slate-950 text-slate-500 py-6 text-center text-sm">
+      <footer className="bg-slate-950 text-slate-600 py-8 text-center text-sm border-t border-slate-900">
         <p>© {new Date().getFullYear()} Pressure Wash Vancouver. All rights reserved.</p>
       </footer>
     </main>
