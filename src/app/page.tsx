@@ -38,7 +38,7 @@ export default function Home() {
             {/* Car */}
             <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
               <img src="/images/car-ba.png" alt="Car before and after pressure washing" className="w-full h-64 object-cover" />
-              <div className="p-4 text-center">
+              <div className="p-4 text-center bg-white">
                 <p className="font-semibold text-slate-700">Car Detailing</p>
                 <p className="text-sm text-slate-500">Years of grime gone in minutes</p>
               </div>
@@ -47,7 +47,7 @@ export default function Home() {
             {/* Driveway */}
             <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
               <img src="/images/driveway-ba.png" alt="Driveway before and after pressure washing" className="w-full h-64 object-cover" />
-              <div className="p-4 text-center">
+              <div className="p-4 text-center bg-white">
                 <p className="font-semibold text-slate-700">Driveway Restoration</p>
                 <p className="text-sm text-slate-500">Concrete brought back to life</p>
               </div>
@@ -56,7 +56,7 @@ export default function Home() {
             {/* Boat */}
             <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
               <img src="/images/boat-ba.png" alt="Boat before and after pressure washing" className="w-full h-64 object-cover" />
-              <div className="p-4 text-center">
+              <div className="p-4 text-center bg-white">
                 <p className="font-semibold text-slate-700">Boat Cleaning</p>
                 <p className="text-sm text-slate-500">Hull and deck restoration</p>
               </div>
