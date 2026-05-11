@@ -22,7 +22,7 @@ export default function Home() {
           </h1>
           
           <p className="text-xl md:text-2xl text-neutral-400 max-w-2xl mx-auto mb-12 leading-relaxed">
-            Driveways, patios, decks, and commercial awnings. 
+            Driveways, patios, decks, boats, cars & commercial awnings. 
             One text. Same-day quote. No phone calls.
           </p>
           
@@ -52,7 +52,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* BEFORE / AFTER */}
+      {/* BEFORE / AFTER — 4 PHOTOS */}
       <section className="py-32 px-6 bg-neutral-900">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
@@ -80,6 +80,26 @@ export default function Home() {
                 <p className="text-neutral-300">Storefront first impression — restored.</p>
               </div>
             </div>
+
+            <div className="group relative rounded-3xl overflow-hidden border border-neutral-800 hover:border-red-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-red-500/10">
+              <div className="aspect-[4/3] overflow-hidden">
+                <img src="/images/car-ba.png" alt="Car detailing before and after" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8">
+                <p className="text-2xl font-black text-white">Car & Vehicle Detailing</p>
+                <p className="text-neutral-300">Barn find to showroom shine.</p>
+              </div>
+            </div>
+
+            <div className="group relative rounded-3xl overflow-hidden border border-neutral-800 hover:border-blue-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10">
+              <div className="aspect-[4/3] overflow-hidden">
+                <img src="/images/boat-ba.png" alt="Boat cleaning before and after" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8">
+                <p className="text-2xl font-black text-white">Boat & Marine</p>
+                <p className="text-neutral-300">Hull, deck, upholstery — like new.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -95,7 +115,8 @@ export default function Home() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
               "Driveways", "Sidewalks", "Patios", "Decks", "Fences", 
-              "Walkways", "Garbage Bins", "Parking Pads", "Stairs"
+              "Walkways", "Garbage Bins", "Parking Pads", "Stairs",
+              "Cars & Trucks", "Boats & Marine", "Awnings"
             ].map((service) => (
               <div key={service} className="group relative bg-neutral-900 border border-neutral-800 rounded-2xl p-8 hover:border-emerald-500/30 hover:bg-neutral-800/50 transition-all duration-300 overflow-hidden">
                 <div className="absolute top-0 right-0 bg-emerald-500/10 text-emerald-500 text-xs font-bold px-3 py-1 rounded-bl-xl opacity-0 group-hover:opacity-100 transition-opacity">
