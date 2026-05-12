@@ -75,8 +75,8 @@ export default function Home() {
             <div className="flex flex-col md:flex-row gap-8 items-center">
               <div className="flex-1">
                 <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-bold mb-4" style={{ background: "#f59e0b", color: "#0a0a0a" }}>Weekend slots usually book first</div>
-                <h3 className="font-black mb-4 text-white" style={{ fontSize: "clamp(28px,4vw,48px)", letterSpacing: "-0.02em" }}>Awnings for Business</h3>
-                <p className="mb-4" style={{ color: "#a3a3a3" }}>Your storefront's first impression is costing you customers. We clean fabric, vinyl, and metal awnings without damaging signage. Restaurants, retail, offices — precision cleaning, professional results.</p>
+                <h3 className="font-black mb-4 text-white" style={{ fontSize: "clamp(28px,4vw,48px)", letterSpacing: "-0.02em" }}>Commercial Building</h3>
+                <p className="mb-4" style={{ color: "#a3a3a3" }}>Your storefront's first impression is costing you customers. We clean brick, concrete, fabric, vinyl, and metal awnings without damaging signage. Restaurants, retail, offices — precision cleaning, professional results.</p>
                 <div className="grid grid-cols-2 gap-2 mb-6">
                   {["No fabric damage","Mould and mildew removed","Colour restored","Before-hours service"].map(b => (
                     <div key={b} className="flex items-center gap-2 text-sm" style={{ color: "#a3a3a3" }}>
@@ -105,7 +105,7 @@ export default function Home() {
               <p className="font-black mb-1" style={{ fontSize: "60px", color: "#10b981", lineHeight: 1 }}>$99</p>
               <p className="font-semibold text-white mb-3">Small Jobs</p>
               <ul className="space-y-2 text-sm" style={{ color: "#a3a3a3" }}>
-                {["Single driveway","Walkway","Garbage bins"].map(i => (
+                {["Single driveway","Walkways","Garbage bins"].map(i => (
                   <li key={i} className="flex items-center gap-2"><CheckCircle className="w-3.5 h-3.5" style={{ color: "#10b981" }} />{i}</li>
                 ))}
               </ul>
@@ -137,13 +137,13 @@ export default function Home() {
       <section className="py-24 px-4" style={{ background: "#171717" }}>
         <div className="max-w-5xl mx-auto">
           <h2 className="font-black text-center mb-3" style={{ fontSize: "clamp(40px,7vw,72px)", letterSpacing: "-0.03em" }}>Why Trust Us</h2>
-          <p className="text-center mb-14 text-lg" style={{ color: "#a3a3a3" }}>Local. Insured. Detail-focused.</p>
+          <p className="text-center mb-14 text-lg" style={{ color: "#a3a3a3" }}>Local. Detail-focused.</p>
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { label: "Local", desc: "Serving White Rock, Surrey, Richmond & Vancouver." },
+              { label: "Local", desc: "Serving White Rock, Northshore & Vancouver." },
               { label: "Reliable", desc: "Show up on time. Every time." },
               { label: "Fast", desc: "Text back in 20 min or less." },
-              { label: "Insured", desc: "Full liability. Zero risk." },
+              { label: "Insured", desc: " Zero risk." },
             ].map((item) => (
               <div key={item.label} className="rounded-2xl p-6 text-center" style={{ background: "#0a0a0a", border: "1px solid #262626" }}>
                 <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style={{ background: "rgba(16,185,129,0.15)" }}>
@@ -176,7 +176,7 @@ export default function Home() {
             </a>
           </div>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center" style={{ color: "rgba(167,243,208,0.7)" }}>
-            <a href="mailto:youremail@example.com" className="flex items-center gap-2 hover:text-white transition-colors"><Mail className="w-5 h-5" />youremail@example.com</a>
+            <a href="mailto:friendlyconcierge@protonmail" className="flex items-center gap-2 hover:text-white transition-colors"><Mail className="w-5 h-5" />youremail@example.com</a>
           </div>
         </div>
       </section>
