@@ -176,7 +176,7 @@ export default function Home() {
             </a>
           </div>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center" style={{ color: "rgba(167,243,208,0.7)" }}>
-            <a href="mailto:friendlyconcierge@protonmail" className="flex items-center gap-2 hover:text-white transition-colors"><Mail className="w-5 h-5" />youremail@example.com</a>
+            <a href="mailto:friendlyconcierge@protonmail" className="flex items-center gap-2 hover:text-white transition-colors"><Mail className="w-5 h-5" />friendlyconcierge@protonmail.com</a>
           </div>
         </div>
       </section>
