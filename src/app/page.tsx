@@ -37,7 +37,7 @@ export default function Home() {
               { img: "/images/driveway-ba.png", title: "Driveway Restoration", sub: "Moss, oil, algae — gone.", accent: "#10b981" },
               { img: "/images/awning-ba.png", title: "Commercial Awning", sub: "Storefront first impression — restored.", accent: "#f59e0b" },
               { img: "/images/bef-and-aft-must.png", title: "Car & Vehicle Detailing", sub: "Barn find to showroom shine.", accent: "#ef4444" },
-              { img: "/images/bef-and-aft-coal-harbour.png", title: "Boat & Marine", sub: "Hull, deck, upholstery — like new.", accent: "#3b82f6" },
+              { img: "/boat-bef-and-aft.png", title: "Boat & Marine", sub: "Hull, deck, upholstery — like new.", accent: "#3b82f6" },
             ].map((card) => (
               <div key={card.title} className="relative rounded-3xl overflow-hidden group cursor-pointer" style={{ border: "1px solid #404040", aspectRatio: "4/3" }}>
                 <img src={card.img} alt={card.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
