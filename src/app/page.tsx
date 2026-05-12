@@ -20,7 +20,7 @@ export default function Home() {
               <MessageCircle className="w-5 h-5" />Text for Free Quote<ArrowRight className="w-5 h-5" />
             </a>
             <a href="tel:+1604XXXXXXX" className="inline-flex items-center justify-center gap-3 font-bold text-lg px-10 py-5 rounded-2xl" style={{ background: "#262626", color: "#fff", border: "1px solid #404040" }}>
-              <Phone className="w-5 h-5" />(604) XXX-XXXX
+              <Phone className="w-5 h-5" />(778) 404-5267
             </a>
           </div>
           <p className="text-sm" style={{ color: "#737373" }}>Typical response time: under 20 minutes</p>
@@ -79,7 +79,7 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
-                <a href="sms:+1604XXXXXXX?body=Hi! I need a commercial awning cleaning quote." className="inline-flex items-center gap-2 font-bold px-6 py-3 rounded-2xl" style={{ background: "#f59e0b", color: "#0a0a0a" }}>
+                <a href="sms:+17784045267?body=Hi! I need a commercial awning cleaning quote." className="inline-flex items-center gap-2 font-bold px-6 py-3 rounded-2xl" style={{ background: "#f59e0b", color: "#0a0a0a" }}>
                   <MessageCircle className="w-4 h-4" />Get Commercial Quote
                 </a>
               </div>
@@ -135,10 +135,10 @@ export default function Home() {
           <p className="text-center mb-14 text-lg" style={{ color: "#a3a3a3" }}>Local. Insured. Obsessive.</p>
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { label: "Local", desc: "Vancouver born. We know the mould." },
+              { label: "Local", desc: "Vancouver raised. We know the mould." },
               { label: "Reliable", desc: "Show up on time. Every time." },
               { label: "Fast", desc: "Text back in 20 min or less." },
-              { label: "Insured", desc: "Full liability. Zero risk." },
+              { label: "Insured", desc: "Zero risk." },
             ].map((item) => (
               <div key={item.label} className="rounded-2xl p-6 text-center" style={{ background: "#0a0a0a", border: "1px solid #262626" }}>
                 <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style={{ background: "rgba(16,185,129,0.15)" }}>
