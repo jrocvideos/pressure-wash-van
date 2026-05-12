@@ -168,7 +168,7 @@ export default function Home() {
           <h2 className="font-black mb-4" style={{ fontSize: "clamp(40px,7vw,72px)", letterSpacing: "-0.03em" }}>Get Your Quote</h2>
           <p className="text-lg mb-10" style={{ color: "rgba(167,243,208,0.8)" }}>Text your address and a photo. We will reply with a firm price — no upsells, no surprises.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-            <a href="sms:+17784045267?body=Hi! I need a free pressure washing quote." className="inline-flex items-center justify-center gap-3 font-bold text-lg px-8 py-4 rounded-2xl" style={{ background: "#fff", color: "#064e3b" }}>
+            <a href="https://wa.me/17784045267?text=Hi! I need a free pressure washing quote." className="inline-flex items-center justify-center gap-3 font-bold text-lg px-8 py-4 rounded-2xl" style={{ background: "#fff", color: "#064e3b" }}>
               <MessageCircle className="w-6 h-6" />Text: (778) 404-5267
             </a>
             <a href="tel:+17784045267" className="inline-flex items-center justify-center gap-3 font-bold text-lg px-8 py-4 rounded-2xl" style={{ background: "rgba(0,0,0,0.2)", color: "#fff", border: "1px solid rgba(255,255,255,0.2)" }}>
