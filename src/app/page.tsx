@@ -74,7 +74,7 @@ export default function Home() {
           <div className="rounded-3xl p-8 md:p-10" style={{ background: "linear-gradient(135deg, rgba(245,158,11,0.1), #171717)", border: "2px solid rgba(245,158,11,0.4)" }}>
             <div className="flex flex-col md:flex-row gap-8 items-center">
               <div className="flex-1">
-                <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-bold mb-4" style={{ background: "#f59e0b", color: "#0a0a0a" }}>HIGHEST MARGIN - BEST ROI</div>
+                <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-bold mb-4" style={{ background: "#f59e0b", color: "#0a0a0a" }}>Weekend slots usually book first</div>
                 <h3 className="font-black mb-4 text-white" style={{ fontSize: "clamp(28px,4vw,48px)", letterSpacing: "-0.02em" }}>Awnings for Business</h3>
                 <p className="mb-4" style={{ color: "#a3a3a3" }}>Your storefront's first impression is costing you customers. We clean fabric, vinyl, and metal awnings without damaging signage. Restaurants, retail, offices — precision cleaning, professional results.</p>
                 <div className="grid grid-cols-2 gap-2 mb-6">
