@@ -8,18 +8,23 @@ export default function Home() {
         <div className="relative max-w-5xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 border rounded-full px-4 py-1.5 text-sm font-medium mb-8" style={{ background: "rgba(16,185,129,0.1)", borderColor: "rgba(16,185,129,0.3)", color: "#10b981" }}>
             <MapPin className="w-3.5 h-3.5" />
-            Vancouver • North Shore • Point Grey • Kerrisdale • Southlands
+            White Rock • Surrey • Richmond • Vancouver
           </div>
           <h1 className="font-black leading-none mb-6" style={{ fontSize: "clamp(48px,10vw,96px)", letterSpacing: "-0.04em" }}>
             <span className="text-white block">We Wash</span>
             <span className="block" style={{ background: "linear-gradient(90deg, #10b981, #2dd4bf, #22d3ee)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Everything.</span>
           </h1>
-          <p className="text-xl mb-10 max-w-2xl mx-auto" style={{ color: "#a3a3a3" }}>Driveways, patios, decks, boats, cars and commercial awnings. One text. Same-day quote. No phone calls.</p>
+          <p className="text-xl mb-4 max-w-2xl mx-auto" style={{ color: "#a3a3a3" }}>
+            Driveways, patios, awnings, boats, and exterior surfaces restored fast. Text a photo. Get a same-day quote. No phone calls. No pressure.
+          </p>
+          <p className="text-sm mb-10 font-medium" style={{ color: "#10b981" }}>
+            Spring bookings fill quickly — weekend slots go first.
+          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-            <a href="sms:+1604XXXXXXX?body=Hi! I need a free quote." className="inline-flex items-center justify-center gap-3 font-extrabold text-lg px-10 py-5 rounded-2xl" style={{ background: "#10b981", color: "#0a0a0a", boxShadow: "0 0 60px -15px rgba(16,185,129,0.6)" }}>
+            <a href="sms:+17784045267?body=Hi! I need a free quote." className="inline-flex items-center justify-center gap-3 font-extrabold text-lg px-10 py-5 rounded-2xl" style={{ background: "#10b981", color: "#0a0a0a", boxShadow: "0 0 60px -15px rgba(16,185,129,0.6)" }}>
               <MessageCircle className="w-5 h-5" />Text for Free Quote<ArrowRight className="w-5 h-5" />
             </a>
-            <a href="tel:+1604XXXXXXX" className="inline-flex items-center justify-center gap-3 font-bold text-lg px-10 py-5 rounded-2xl" style={{ background: "#262626", color: "#fff", border: "1px solid #404040" }}>
+            <a href="tel:+17784045267" className="inline-flex items-center justify-center gap-3 font-bold text-lg px-10 py-5 rounded-2xl" style={{ background: "#262626", color: "#fff", border: "1px solid #404040" }}>
               <Phone className="w-5 h-5" />(778) 404-5267
             </a>
           </div>
@@ -34,10 +39,10 @@ export default function Home() {
           <p className="text-center mb-14" style={{ color: "#a3a3a3", fontSize: "20px" }}>One session. Years of grime erased.</p>
           <div className="grid md:grid-cols-2 gap-8">
             {[
-              { img: "/images/driveway-ba.png", title: "Driveway Restoration", sub: "Moss, oil, algae — gone.", accent: "#10b981" },
+              { img: "/images/driveway-ba.png", title: "Driveway Restoration", sub: "Restore curb appeal in hours, not weekends.", accent: "#10b981" },
               { img: "/images/awning-ba.png", title: "Commercial Awning", sub: "Storefront first impression — restored.", accent: "#f59e0b" },
-              { img: "/images/bef-and-aft-must.png", title: "Car & Vehicle Detailing", sub: "Barn find to showroom shine.", accent: "#ef4444" },
-              { img: "/images/boat-bef-and-aft.png", title: "Boat & Marine", sub: "Hull, deck, upholstery — like new.", accent: "#3b82f6" },
+              { img: "/images/bef-and-aft-must.png", title: "Car & Vehicle Detailing", sub: "Restore your vehicle's finish safely.", accent: "#ef4444" },
+              { img: "/images/boat-bef-and-aft.png", title: "Boat & Marine", sub: "Hull and deck restoration — like new.", accent: "#3b82f6" },
             ].map((card) => (
               <div key={card.title} className="relative rounded-3xl overflow-hidden group cursor-pointer" style={{ border: "1px solid #404040", aspectRatio: "4/3" }}>
                 <img src={card.img} alt={card.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
@@ -55,9 +60,9 @@ export default function Home() {
       <section className="py-24 px-4" style={{ background: "#0a0a0a" }}>
         <div className="max-w-5xl mx-auto">
           <h2 className="font-black text-center mb-3" style={{ fontSize: "clamp(40px,7vw,72px)", letterSpacing: "-0.03em" }}>What We Clean</h2>
-          <p className="text-center mb-14" style={{ color: "#a3a3a3", fontSize: "20px" }}>If it is dirty, we fix it.</p>
+          <p className="text-center mb-14" style={{ color: "#a3a3a3", fontSize: "20px" }}>Professional exterior cleaning that makes your property look new again.</p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
-            {["Driveways","Sidewalks","Patios","Decks","Fences","Walkways","Garbage Bins","Parking Pads","Stairs","Cars & Trucks","Boats & Marine","Awnings"].map((service) => (
+            {["Driveways","Patios","Awnings","Sidewalks","Decks","Fences","Garbage Bins","Parking Pads","Stairs","Cars & Trucks","Boats & Marine","Commercial Buildings"].map((service) => (
               <div key={service} className="flex items-center gap-3 rounded-2xl px-5 py-4" style={{ background: "#171717", border: "1px solid #262626" }}>
                 <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0" style={{ background: "rgba(16,185,129,0.15)" }}>
                   <CheckCircle className="w-4 h-4" style={{ color: "#10b981" }} />
@@ -69,9 +74,9 @@ export default function Home() {
           <div className="rounded-3xl p-8 md:p-10" style={{ background: "linear-gradient(135deg, rgba(245,158,11,0.1), #171717)", border: "2px solid rgba(245,158,11,0.4)" }}>
             <div className="flex flex-col md:flex-row gap-8 items-center">
               <div className="flex-1">
-                <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-bold mb-4" style={{ background: "#f59e0b", color: "#0a0a0a" }}>See Instant Exterior Transformation</div>
+                <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-bold mb-4" style={{ background: "#f59e0b", color: "#0a0a0a" }}>HIGHEST MARGIN - BEST ROI</div>
                 <h3 className="font-black mb-4 text-white" style={{ fontSize: "clamp(28px,4vw,48px)", letterSpacing: "-0.02em" }}>Awnings for Business</h3>
-                <p className="mb-4" style={{ color: "#a3a3a3" }}>Your storefront first impression is filthy. We clean fabric, vinyl, and metal awnings without damaging signage. Restaurants, retail, offices.</p>
+                <p className="mb-4" style={{ color: "#a3a3a3" }}>Your storefront's first impression is costing you customers. We clean fabric, vinyl, and metal awnings without damaging signage. Restaurants, retail, offices — precision cleaning, professional results.</p>
                 <div className="grid grid-cols-2 gap-2 mb-6">
                   {["No fabric damage","Mould and mildew removed","Colour restored","Before-hours service"].map(b => (
                     <div key={b} className="flex items-center gap-2 text-sm" style={{ color: "#a3a3a3" }}>
@@ -119,7 +124,7 @@ export default function Home() {
               <p className="font-black mb-1" style={{ fontSize: "60px", color: "#f59e0b", lineHeight: 1 }}>Custom</p>
               <p className="font-semibold text-white mb-3">Commercial</p>
               <ul className="space-y-2 text-sm" style={{ color: "#a3a3a3" }}>
-                {["Awning restore","Restaurant facade","Maintenance plan"].map(i => (
+                {["Awning restore","Building facade","Maintenance plan"].map(i => (
                   <li key={i} className="flex items-center gap-2"><CheckCircle className="w-3.5 h-3.5" style={{ color: "#f59e0b" }} />{i}</li>
                 ))}
               </ul>
@@ -132,13 +137,13 @@ export default function Home() {
       <section className="py-24 px-4" style={{ background: "#171717" }}>
         <div className="max-w-5xl mx-auto">
           <h2 className="font-black text-center mb-3" style={{ fontSize: "clamp(40px,7vw,72px)", letterSpacing: "-0.03em" }}>Why Trust Us</h2>
-          <p className="text-center mb-14 text-lg" style={{ color: "#a3a3a3" }}>Local. Insured. Obsessive.</p>
+          <p className="text-center mb-14 text-lg" style={{ color: "#a3a3a3" }}>Local. Insured. Detail-focused.</p>
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { label: "Local", desc: "Vancouver raised. We know the mould." },
+              { label: "Local", desc: "Serving White Rock, Surrey, Richmond & Vancouver." },
               { label: "Reliable", desc: "Show up on time. Every time." },
               { label: "Fast", desc: "Text back in 20 min or less." },
-              { label: "Insured", desc: "Zero risk." },
+              { label: "Insured", desc: "Full liability. Zero risk." },
             ].map((item) => (
               <div key={item.label} className="rounded-2xl p-6 text-center" style={{ background: "#0a0a0a", border: "1px solid #262626" }}>
                 <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style={{ background: "rgba(16,185,129,0.15)" }}>
@@ -163,16 +168,15 @@ export default function Home() {
           <h2 className="font-black mb-4" style={{ fontSize: "clamp(40px,7vw,72px)", letterSpacing: "-0.03em" }}>Get Your Quote</h2>
           <p className="text-lg mb-10" style={{ color: "rgba(167,243,208,0.8)" }}>Text your address and a photo. We will reply with a firm price — no upsells, no surprises.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-            <a href="sms:+1604XXXXXXX?body=Hi! I need a free pressure washing quote." className="inline-flex items-center justify-center gap-3 font-bold text-lg px-8 py-4 rounded-2xl" style={{ background: "#fff", color: "#064e3b" }}>
-              <MessageCircle className="w-6 h-6" />Text: (604) XXX-XXXX
+            <a href="sms:+17784045267?body=Hi! I need a free pressure washing quote." className="inline-flex items-center justify-center gap-3 font-bold text-lg px-8 py-4 rounded-2xl" style={{ background: "#fff", color: "#064e3b" }}>
+              <MessageCircle className="w-6 h-6" />Text: (778) 404-5267
             </a>
-            <a href="tel:+1604XXXXXXX" className="inline-flex items-center justify-center gap-3 font-bold text-lg px-8 py-4 rounded-2xl" style={{ background: "rgba(0,0,0,0.2)", color: "#fff", border: "1px solid rgba(255,255,255,0.2)" }}>
+            <a href="tel:+17784045267" className="inline-flex items-center justify-center gap-3 font-bold text-lg px-8 py-4 rounded-2xl" style={{ background: "rgba(0,0,0,0.2)", color: "#fff", border: "1px solid rgba(255,255,255,0.2)" }}>
               <Phone className="w-6 h-6" />Call Now
             </a>
           </div>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center" style={{ color: "rgba(167,243,208,0.7)" }}>
             <a href="mailto:youremail@example.com" className="flex items-center gap-2 hover:text-white transition-colors"><Mail className="w-5 h-5" />youremail@example.com</a>
-            <a href="https://tiktok.com/@yourhandle" target="_blank" className="flex items-center gap-2 hover:text-white transition-colors"><MessageCircle className="w-5 h-5" />TikTok</a>
           </div>
         </div>
       </section>
