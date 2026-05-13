@@ -8,7 +8,7 @@ export default function Home() {
         <div className="relative max-w-5xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 border rounded-full px-4 py-1.5 text-sm font-medium mb-8" style={{ background: "rgba(16,185,129,0.1)", borderColor: "rgba(16,185,129,0.3)", color: "#10b981" }}>
             <MapPin className="w-3.5 h-3.5" />
-            White Rock • Surrey • Richmond • Vancouver
+            White Rock • North Shore • Richmond • Vancouver
           </div>
           <h1 className="font-black leading-none mb-6" style={{ fontSize: "clamp(48px,10vw,96px)", letterSpacing: "-0.04em" }}>
             <span className="text-white block">We Wash</span>
@@ -25,7 +25,7 @@ export default function Home() {
               <MessageCircle className="w-5 h-5" />Text for Free Quote<ArrowRight className="w-5 h-5" />
             </a>
             <a href="tel:+17784045267" className="inline-flex items-center justify-center gap-3 font-bold text-lg px-10 py-5 rounded-2xl" style={{ background: "#262626", color: "#fff", border: "1px solid #404040" }}>
-              <Phone className="w-5 h-5" />(778) 404-5267
+              <Phone className="w-5 h-5" />(236) 874-0586
             </a>
           </div>
           <p className="text-sm" style={{ color: "#737373" }}>Typical response time: under 20 minutes</p>
@@ -169,7 +169,7 @@ export default function Home() {
           <p className="text-lg mb-10" style={{ color: "rgba(167,243,208,0.8)" }}>Text your address and a photo. We will reply with a firm price — no upsells, no surprises.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
             <a href="https://wa.me/17784045267?text=Hi! I need a free pressure washing quote." className="inline-flex items-center justify-center gap-3 font-bold text-lg px-8 py-4 rounded-2xl" style={{ background: "#fff", color: "#064e3b" }}>
-              <MessageCircle className="w-6 h-6" />Text: (778) 404-5267
+              <MessageCircle className="w-6 h-6" />Text: (236) 874-0586
             </a>
             <a href="tel:+17784045267" className="inline-flex items-center justify-center gap-3 font-bold text-lg px-8 py-4 rounded-2xl" style={{ background: "rgba(0,0,0,0.2)", color: "#fff", border: "1px solid rgba(255,255,255,0.2)" }}>
               <Phone className="w-6 h-6" />Call Now
