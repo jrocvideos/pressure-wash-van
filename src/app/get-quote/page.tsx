@@ -30,7 +30,7 @@ export default function GetQuote() {
         <div className="max-w-2xl mx-auto">
           <LeadForm />
           <p className="text-xs text-neutral-600 text-center mt-4">
-            After submitting, text photos to <a href="https://wa.me/17784045267" className="text-emerald-400 hover:text-emerald-300">(778) 404-5267</a> for faster pricing.
+            After submitting, text photos to <a href="https://wa.me/12368740586" className="text-emerald-400 hover:text-emerald-300">(236) 874-0586</a> for faster pricing.
           </p>
         </div>
       </section>

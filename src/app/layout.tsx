@@ -1,10 +1,14 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Pressure Washing Vancouver | Driveway & Awning Cleaning",
   description: "Local pressure washing in North Shore, Point Grey, Kerrisdale & Southlands. Driveways, patios, decks, and commercial awnings. Text for a free quote.",
   keywords: "pressure washing Vancouver, driveway cleaning Vancouver, awning cleaning, patio cleaning, boat cleaning Vancouver, power washing North Shore",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     title: "Pressure Washing Vancouver | We Wash Everything",
     description: "Driveways, patios, decks, awnings, boats. One text. Same-day quote. Serving Vancouver, Richmond, North Shore & White Rock.",
@@ -12,6 +16,12 @@ export const metadata: Metadata = {
     siteName: "Pressure Wash Vancouver",
     type: "website",
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0a0a0a",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

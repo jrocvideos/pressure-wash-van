@@ -29,13 +29,13 @@ export default function PatioDeck() {
                 ))}
               </div>
               <div className="flex gap-4">
-                <a href="https://wa.me/17784045267?text=Hi! I need a patio/deck cleaning quote." target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-teal-500 hover:bg-teal-400 text-neutral-950 font-bold px-6 py-3 rounded-xl transition-all">
+                <a href="https://wa.me/12368740586?text=Hi! I need a patio/deck cleaning quote." target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-teal-500 hover:bg-teal-400 text-neutral-950 font-bold px-6 py-3 rounded-xl transition-all">
                   <MessageCircle className="w-5 h-5" />
                   WhatsApp Quote
                 </a>
-                <a href="tel:+17784045267" className="inline-flex items-center gap-2 bg-neutral-800 hover:bg-neutral-700 text-white font-bold px-6 py-3 rounded-xl border border-neutral-700">
+                <a href="tel:+12368740586" className="inline-flex items-center gap-2 bg-neutral-800 hover:bg-neutral-700 text-white font-bold px-6 py-3 rounded-xl border border-neutral-700">
                   <Phone className="w-5 h-5" />
-                  (778) 404-5267
+                  (236) 874-0586
                 </a>
               </div>
             </div>
