@@ -83,7 +83,7 @@ export default function Home() {
       <section className="py-24 px-4" style={{ background: "#0a0a0a" }}>
         <div className="max-w-5xl mx-auto">
           <h2 className="font-black text-center mb-3" style={{ fontSize: "clamp(40px,7vw,72px)", letterSpacing: "-0.03em" }}>What We Clean</h2>
-          <p className="text-center mb-14" style={{ color: "#a3a3a3", fontSize: "20px" }}>Professional exterior cleaning that makes your property look new again.</p>
+          <p className="text-center mb-14" style={{ color: "#a3a3a3", fontSize: "20px" }}>Professional exterior cleaning that makes your property look new and brings up the vlaue again.</p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
             {["Driveways","Patios","Awnings","Sidewalks","Decks","Fences","Garbage Bins","Parking Pads","Stairs","Cars & Trucks","Boats & Marine","Commercial Buildings"].map((service) => (
               <div key={service} className="flex items-center gap-3 rounded-2xl px-5 py-4" style={{ background: "#171717", border: "1px solid #262626" }}>
@@ -167,7 +167,7 @@ export default function Home() {
           <p className="text-center mb-14 text-lg" style={{ color: "#a3a3a3" }}>Local. Insured. Detail-focused.</p>
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { label: "Local", desc: "Serving White Rock, Surrey, Richmond and Vancouver." },
+              { label: "Local", desc: "Serving White Rock, North Vancouver, West Vancouver Richmond and Kerrisdale." },
               { label: "Reliable", desc: "Show up on time. Every time." },
               { label: "Fast", desc: "Text back in 20 min or less." },
               { label: "Insured", desc: "Full liability. Zero risk." },
@@ -237,8 +237,8 @@ export default function Home() {
               >
                 <option value="">What needs cleaning? *</option>
                 <option value="driveway">Driveway</option>
-                <option value="patio">Patio / Deck</option>
-                <option value="awning">Commercial Awning</option>
+                <option value="patio">Patio / Deck / Plastic Lawn Furniture</option>
+                <option value="awning">Commercial Awnings</option>
                 <option value="car">Car / Truck</option>
                 <option value="boat">Boat / Marine</option>
                 <option value="other">Something Else</option>
