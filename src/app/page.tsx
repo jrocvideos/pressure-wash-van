@@ -21,10 +21,10 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen text-white" style={{ background: "#0a0a0a" }}>
+    <main className="min-h-screen text-white" style={{ background: "#0a0a0a" }}>n      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4" style={{ background: "rgba(10,10,10,0.9)", backdropFilter: "blur(12px)", borderBottom: "1px solid #262626" }}>n        <span className="font-black text-white text-lg">PWV</span>n        <div className="hidden md:flex items-center gap-6 text-sm font-medium" style={{ color: "#a3a3a3" }}>n          <a href="/driveway" className="hover:text-white transition-colors">Driveway</a>n          <a href="/patio-deck" className="hover:text-white transition-colors">Patio & Deck</a>n          <a href="/commercial" className="hover:text-white transition-colors">Commercial</a>n          <a href="/boat-marine" className="hover:text-white transition-colors">Boat & Marine</a>n        </div>n        <a href="/get-quote" className="font-bold px-4 py-2 rounded-xl text-sm" style={{ background: "#10b981", color: "#0a0a0a" }}>Get Quote</a>n      </nav>
 
       {/* HERO */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center px-4 py-24 overflow-hidden">
+      <section className="relative min-h-screen flex flex-col items-center justify-center px-4 py-24 pt-32 overflow-hidden" style={{ background: "#0a0a0a" }}>
         <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at top, rgba(16,185,129,0.15) 0%, #0a0a0a 60%)" }} />
         <div className="relative max-w-5xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 border rounded-full px-4 py-1.5 text-sm font-medium mb-8" style={{ background: "rgba(16,185,129,0.1)", borderColor: "rgba(16,185,129,0.3)", color: "#10b981" }}>
