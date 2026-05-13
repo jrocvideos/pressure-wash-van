@@ -13,7 +13,7 @@ export default function ThankYou() {
         </p>
         
         <a
-          href="https://wa.me/112368740586?text=Hi! I just submitted a quote request. Here are the photos:"
+          href="https://wa.me/12368740586?text=Hi! I just submitted a quote request. Here are the photos:"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-neutral-950 font-black text-lg px-10 py-5 rounded-2xl transition-all shadow-[0_0_40px_-10px_rgba(16,185,129,0.5)] hover:-translate-y-1 mb-8"
@@ -22,7 +22,7 @@ export default function ThankYou() {
         </a>
         
         <p className="text-neutral-600 text-sm">
-          Or call/text us directly: <a href="tel:+112368740586" className="text-emerald-400 hover:text-emerald-300">(236) 874-0586</a>
+          Or call/text us directly: <a href="tel:+12368740586" className="text-emerald-400 hover:text-emerald-300">(236) 874-0586</a>
         </p>
         
         {/* Google Ads Conversion Tracking Pixel — Paste your gtag here */}

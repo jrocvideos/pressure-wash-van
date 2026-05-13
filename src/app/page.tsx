@@ -51,7 +51,7 @@ export default function Home() {
               
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <a
-                  href="https://wa.me/112368740586?text=Hi! I need a free quote for pressure washing."
+                  href="https://wa.me/12368740586?text=Hi! I need a free quote for pressure washing."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 bg-neutral-800 hover:bg-neutral-700 text-white font-bold px-6 py-4 rounded-xl transition-all border border-neutral-700"
@@ -60,7 +60,7 @@ export default function Home() {
                   Or WhatsApp Us
                 </a>
                 <a
-                  href="tel:+112368740586"
+                  href="tel:+12368740586"
                   className="inline-flex items-center gap-3 bg-neutral-800 hover:bg-neutral-700 text-white font-bold px-6 py-4 rounded-xl transition-all border border-neutral-700"
                 >
                   <Phone className="w-5 h-5" />
@@ -146,7 +146,7 @@ export default function Home() {
               </form>
               
               <p className="text-xs text-neutral-600 text-center mt-4">
-                After submitting, text your photos to <a href="https://wa.me/112368740586" className="text-emerald-400 hover:text-emerald-300">(236) 874-0586</a> for faster pricing.
+                After submitting, text your photos to <a href="https://wa.me/12368740586" className="text-emerald-400 hover:text-emerald-300">(236) 874-0586</a> for faster pricing.
               </p>
             </div>
           </div>
@@ -164,7 +164,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="group rounded-3xl overflow-hidden border border-neutral-800 hover:border-emerald-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-emerald-500/10 bg-neutral-950">
               <div className="relative aspect-[4/3] overflow-hidden">
-                <img src="/images/driveway-ba.jpg" alt="Driveway before and after" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <img src="/images/driveway-ba.png" alt="Driveway before and after" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-8 pt-20">
                   <p className="text-2xl font-black text-white">Driveway Restoration</p>
                   <p className="text-neutral-300">Moss, oil, algae — gone.</p>
@@ -184,7 +184,7 @@ export default function Home() {
 
             <div className="group rounded-3xl overflow-hidden border border-neutral-800 hover:border-red-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-red-500/10 bg-neutral-950">
               <div className="relative aspect-[4/3] overflow-hidden">
-                <img src="/images/car-ba.png" alt="Car detailing before and after" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <img src="/images/bef-and-aft-must.png" alt="Car detailing before and after" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-8 pt-20">
                   <p className="text-2xl font-black text-white">Car & Vehicle Detailing</p>
                   <p className="text-neutral-300">Barn find to showroom shine.</p>
@@ -194,7 +194,7 @@ export default function Home() {
 
             <div className="group rounded-3xl overflow-hidden border border-neutral-800 hover:border-blue-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10 bg-neutral-950">
               <div className="relative aspect-[4/3] overflow-hidden">
-                <img src="/images/boat-ba.png" alt="Boat cleaning before and after" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <img src="/images/boat-bef-and-aft.png" alt="Boat cleaning before and after" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-8 pt-20">
                   <p className="text-2xl font-black text-white">Boat & Marine</p>
                   <p className="text-neutral-300">Hull, deck, upholstery — like new.</p>
@@ -266,7 +266,7 @@ export default function Home() {
               </div>
               
               <a
-                href="https://wa.me/112368740586?text=Hi! I need a commercial awning cleaning quote."
+                href="https://wa.me/12368740586?text=Hi! I need a commercial awning cleaning quote."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 bg-amber-500 hover:bg-amber-400 text-neutral-950 font-black text-lg px-10 py-5 rounded-2xl transition-all shadow-xl shadow-amber-500/20 hover:shadow-amber-500/40 hover:-translate-y-0.5"
@@ -340,7 +340,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20">
             <h2 className="text-5xl md:text-7xl font-black mb-6">Why Trust Us</h2>
-            <p className="text-xl text-neutral-500">Local. Insured. Obsessive.</p>
+            <p className="text-xl text-neutral-500">Local. Insured. Detail-focused.</p>
           </div>
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
@@ -380,7 +380,7 @@ export default function Home() {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <a
-              href="https://wa.me/112368740586?text=Hi! I need a free pressure washing quote. My address is: "
+              href="https://wa.me/12368740586?text=Hi! I need a free pressure washing quote. My address is: "
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center justify-center gap-3 bg-white text-emerald-950 font-black text-2xl px-12 py-6 rounded-2xl hover:bg-emerald-50 transition-all shadow-2xl hover:-translate-y-1"
@@ -390,7 +390,7 @@ export default function Home() {
               <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
             </a>
             <a
-              href="tel:+112368740586"
+              href="tel:+12368740586"
               className="inline-flex items-center justify-center gap-3 bg-emerald-900 text-white font-bold text-2xl px-12 py-6 rounded-2xl hover:bg-emerald-800 transition-colors border border-emerald-700"
             >
               <Phone className="w-7 h-7" />
