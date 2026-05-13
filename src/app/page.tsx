@@ -1,187 +1,418 @@
-import { Phone, Mail, MessageCircle, MapPin, CheckCircle, ArrowRight, Star, Droplets } from "lucide-react";
+"use client";
+
+import { useState } from "react";
+import { Phone, Mail, MessageCircle, MapPin, CheckCircle, Sparkles, ArrowRight, Star, Droplets, Send } from "lucide-react";
 
 export default function Home() {
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    service: "",
+    address: "",
+    details: ""
+  });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (formData.name && formData.phone && formData.service) {
+      window.location.href = "/thank-you";
+    }
+  };
+
   return (
-    <main className="min-h-screen text-white" style={{ background: "#0a0a0a" }}>
-      <section className="relative min-h-screen flex flex-col items-center justify-center px-4 py-24 overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at top, rgba(16,185,129,0.15) 0%, #0a0a0a 60%)" }} />
-        <div className="relative max-w-5xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 border rounded-full px-4 py-1.5 text-sm font-medium mb-8" style={{ background: "rgba(16,185,129,0.1)", borderColor: "rgba(16,185,129,0.3)", color: "#10b981" }}>
-            <MapPin className="w-3.5 h-3.5" />
-            White Rock • North Shore • Richmond • Vancouver
-          </div>
-          <h1 className="font-black leading-none mb-6" style={{ fontSize: "clamp(48px,10vw,96px)", letterSpacing: "-0.04em" }}>
-            <span className="text-white block">We Wash</span>
-            <span className="block" style={{ background: "linear-gradient(90deg, #10b981, #2dd4bf, #22d3ee)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Everything.</span>
-          </h1>
-          <p className="text-xl mb-4 max-w-2xl mx-auto" style={{ color: "#a3a3a3" }}>
-            Driveways, patios, awnings, boats, and exterior surfaces restored fast. Text a photo. Get a same-day quote. No phone calls. No pressure.
-          </p>
-          <p className="text-sm mb-10 font-medium" style={{ color: "#10b981" }}>
-            Spring bookings fill quickly — weekend slots go first.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-            <a href="sms:+17784045267?body=Hi! I need a free quote." className="inline-flex items-center justify-center gap-3 font-extrabold text-lg px-10 py-5 rounded-2xl" style={{ background: "#10b981", color: "#0a0a0a", boxShadow: "0 0 60px -15px rgba(16,185,129,0.6)" }}>
-              <MessageCircle className="w-5 h-5" />Text for Free Quote<ArrowRight className="w-5 h-5" />
-            </a>
-            <a href="tel:+17784045267" className="inline-flex items-center justify-center gap-3 font-bold text-lg px-10 py-5 rounded-2xl" style={{ background: "#262626", color: "#fff", border: "1px solid #404040" }}>
-              <Phone className="w-5 h-5" />(236) 874-0586
-            </a>
-          </div>
-          <p className="text-sm" style={{ color: "#737373" }}>Typical response time: under 20 minutes</p>
-          <div className="mt-16 flex justify-center animate-bounce"><Droplets className="w-6 h-6" style={{ color: "#10b981" }} /></div>
-        </div>
-      </section>
-
-      <section className="py-24 px-4" style={{ background: "#171717" }}>
-        <div className="max-w-6xl mx-auto">
-          <h2 className="font-black text-center mb-3" style={{ fontSize: "clamp(40px,7vw,72px)", letterSpacing: "-0.03em" }}>The Proof</h2>
-          <p className="text-center mb-14" style={{ color: "#a3a3a3", fontSize: "20px" }}>One session. Years of grime erased.</p>
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              { img: "/images/driveway-ba.png", title: "Driveway Restoration", sub: "Restore curb appeal in hours, not weekends.", accent: "#10b981" },
-              { img: "/images/awning-ba.png", title: "Commercial Awning", sub: "Storefront first impression — restored.", accent: "#f59e0b" },
-              { img: "/images/bef-and-aft-must.png", title: "Car & Vehicle Detailing", sub: "Restore your vehicle's finish safely.", accent: "#ef4444" },
-              { img: "/images/boat-bef-and-aft.png", title: "Boat & Marine", sub: "Hull and deck restoration — like new.", accent: "#3b82f6" },
-            ].map((card) => (
-              <div key={card.title} className="relative rounded-3xl overflow-hidden group cursor-pointer" style={{ border: "1px solid #404040", aspectRatio: "4/3" }}>
-                <img src={card.img} alt={card.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 60%)" }} />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <p className="font-bold text-white text-xl">{card.title}</p>
-                  <p className="text-sm mt-1" style={{ color: "#a3a3a3" }}>{card.sub}</p>
-                </div>
+    <main className="min-h-screen bg-neutral-950 text-white antialiased">
+      {/* HERO — Split: Copy left, Form right */}
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-950/60 via-neutral-950 to-neutral-950" />
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wMykiLz48L3N2Zz4=')] opacity-50" />
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 w-full">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* LEFT: Copy */}
+            <div>
+              <div className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full px-5 py-2 text-sm font-semibold text-emerald-400 mb-8 backdrop-blur-sm">
+                <MapPin className="w-4 h-4" />
+                Vancouver • Richmond • North Shore • White Rock
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-24 px-4" style={{ background: "#0a0a0a" }}>
-        <div className="max-w-5xl mx-auto">
-          <h2 className="font-black text-center mb-3" style={{ fontSize: "clamp(40px,7vw,72px)", letterSpacing: "-0.03em" }}>What We Clean</h2>
-          <p className="text-center mb-14" style={{ color: "#a3a3a3", fontSize: "20px" }}>Professional exterior cleaning that makes your property look new again.</p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
-            {["Driveways","Patios","Awnings","Sidewalks","Decks","Fences","Garbage Bins","Parking Pads","Stairs","Cars & Trucks","Boats & Marine","Commercial Buildings"].map((service) => (
-              <div key={service} className="flex items-center gap-3 rounded-2xl px-5 py-4" style={{ background: "#171717", border: "1px solid #262626" }}>
-                <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0" style={{ background: "rgba(16,185,129,0.15)" }}>
-                  <CheckCircle className="w-4 h-4" style={{ color: "#10b981" }} />
-                </div>
-                <span className="font-semibold text-white">{service}</span>
-              </div>
-            ))}
-          </div>
-          <div className="rounded-3xl p-8 md:p-10" style={{ background: "linear-gradient(135deg, rgba(245,158,11,0.1), #171717)", border: "2px solid rgba(245,158,11,0.4)" }}>
-            <div className="flex flex-col md:flex-row gap-8 items-center">
-              <div className="flex-1">
-                <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-bold mb-4" style={{ background: "#f59e0b", color: "#0a0a0a" }}>Weekend slots usually book first</div>
-                <h3 className="font-black mb-4 text-white" style={{ fontSize: "clamp(28px,4vw,48px)", letterSpacing: "-0.02em" }}>Commercial Building</h3>
-                <p className="mb-4" style={{ color: "#a3a3a3" }}>Your storefront's first impression is costing you customers. We clean brick, concrete, fabric, vinyl, and metal awnings without damaging signage. Restaurants, retail, offices — precision cleaning, professional results.</p>
-                <div className="grid grid-cols-2 gap-2 mb-6">
-                  {["No fabric damage","Mould and mildew removed","Colour restored","Before-hours service"].map(b => (
-                    <div key={b} className="flex items-center gap-2 text-sm" style={{ color: "#a3a3a3" }}>
-                      <CheckCircle className="w-4 h-4 shrink-0" style={{ color: "#f59e0b" }} />{b}
-                    </div>
-                  ))}
-                </div>
-                <a href="sms:+17784045267?body=Hi! I need a commercial awning cleaning quote." className="inline-flex items-center gap-2 font-bold px-6 py-3 rounded-2xl" style={{ background: "#f59e0b", color: "#0a0a0a" }}>
-                  <MessageCircle className="w-4 h-4" />Get Commercial Quote
+              
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9] mb-8">
+                We Wash<br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-300">
+                  Everything.
+                </span>
+              </h1>
+              
+              <p className="text-xl md:text-2xl text-neutral-400 max-w-lg mb-8 leading-relaxed">
+                Driveways, patios, decks, boats, cars & commercial awnings. 
+                <span className="text-white font-semibold"> Send a photo for an instant quote.</span>
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <a
+                  href="https://wa.me/17784045267?text=Hi! I need a free quote for pressure washing."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 bg-neutral-800 hover:bg-neutral-700 text-white font-bold px-6 py-4 rounded-xl transition-all border border-neutral-700"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  Or WhatsApp Us
+                </a>
+                <a
+                  href="tel:+17784045267"
+                  className="inline-flex items-center gap-3 bg-neutral-800 hover:bg-neutral-700 text-white font-bold px-6 py-4 rounded-xl transition-all border border-neutral-700"
+                >
+                  <Phone className="w-5 h-5" />
+                  (778) 404-5267
                 </a>
               </div>
-              <div className="flex-1 w-full">
-                <img src="/images/awning-ba.png" alt="Awning before and after" className="w-full rounded-3xl object-cover" style={{ border: "1px solid rgba(245,158,11,0.3)", aspectRatio: "4/3" }} />
+              
+              <p className="text-sm text-neutral-600">Same-day pricing. No phone calls needed.</p>
+            </div>
+
+            {/* RIGHT: Lead Form */}
+            <div className="bg-neutral-900 border border-neutral-800 rounded-3xl p-8 shadow-2xl">
+              <h2 className="text-2xl font-black mb-2">Get Your Quote</h2>
+              <p className="text-neutral-400 text-sm mb-6">Fill this out — we'll text you a firm price in under 20 minutes.</p>
+              
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <input
+                    type="text"
+                    placeholder="Full Name"
+                    required
+                    value={formData.name}
+                    onChange={(e) => setFormData({...formData, name: e.target.value})}
+                    className="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-white placeholder-neutral-600 focus:border-emerald-500 focus:outline-none transition-colors"
+                  />
+                  <input
+                    type="tel"
+                    placeholder="Phone Number"
+                    required
+                    value={formData.phone}
+                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                    className="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-white placeholder-neutral-600 focus:border-emerald-500 focus:outline-none transition-colors"
+                  />
+                </div>
+                
+                <input
+                  type="email"
+                  placeholder="Email (optional)"
+                  value={formData.email}
+                  onChange={(e) => setFormData({...formData, email: e.target.value})}
+                  className="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-white placeholder-neutral-600 focus:border-emerald-500 focus:outline-none transition-colors"
+                />
+                
+                <select
+                  required
+                  value={formData.service}
+                  onChange={(e) => setFormData({...formData, service: e.target.value})}
+                  className="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-white focus:border-emerald-500 focus:outline-none transition-colors appearance-none"
+                >
+                  <option value="" disabled className="text-neutral-600">What needs cleaning?</option>
+                  <option value="driveway">Driveway</option>
+                  <option value="patio">Patio / Deck</option>
+                  <option value="awning">Commercial Awning</option>
+                  <option value="car">Car / Truck</option>
+                  <option value="boat">Boat / Marine</option>
+                  <option value="other">Something Else</option>
+                </select>
+                
+                <input
+                  type="text"
+                  placeholder="Your Address"
+                  required
+                  value={formData.address}
+                  onChange={(e) => setFormData({...formData, address: e.target.value})}
+                  className="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-white placeholder-neutral-600 focus:border-emerald-500 focus:outline-none transition-colors"
+                />
+                
+                <textarea
+                  placeholder="Any details? (Optional)"
+                  rows={3}
+                  value={formData.details}
+                  onChange={(e) => setFormData({...formData, details: e.target.value})}
+                  className="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-white placeholder-neutral-600 focus:border-emerald-500 focus:outline-none transition-colors resize-none"
+                />
+                
+                <button
+                  type="submit"
+                  className="w-full group inline-flex items-center justify-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-neutral-950 font-black text-lg px-8 py-4 rounded-xl transition-all shadow-[0_0_40px_-10px_rgba(16,185,129,0.5)] hover:shadow-[0_0_60px_-10px_rgba(16,185,129,0.7)] hover:-translate-y-0.5"
+                >
+                  <Send className="w-5 h-5" />
+                  Send a Photo for Instant Quote
+                </button>
+              </form>
+              
+              <p className="text-xs text-neutral-600 text-center mt-4">
+                After submitting, text your photos to <a href="https://wa.me/17784045267" className="text-emerald-400 hover:text-emerald-300">(778) 404-5267</a> for faster pricing.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* BEFORE / AFTER */}
+      <section className="py-32 px-6 bg-neutral-900">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-7xl font-black mb-6">The Proof</h2>
+            <p className="text-xl text-neutral-500 max-w-xl mx-auto">One session. Years of grime erased.</p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="group rounded-3xl overflow-hidden border border-neutral-800 hover:border-emerald-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-emerald-500/10 bg-neutral-950">
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <img src="/images/driveway-ba.jpg" alt="Driveway before and after" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-8 pt-20">
+                  <p className="text-2xl font-black text-white">Driveway Restoration</p>
+                  <p className="text-neutral-300">Moss, oil, algae — gone.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="group rounded-3xl overflow-hidden border border-neutral-800 hover:border-amber-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-amber-500/10 bg-neutral-950">
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <img src="/images/awning-ba.png" alt="Commercial awning before and after" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-8 pt-20">
+                  <p className="text-2xl font-black text-white">Commercial Awning</p>
+                  <p className="text-neutral-300">Storefront first impression — restored.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="group rounded-3xl overflow-hidden border border-neutral-800 hover:border-red-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-red-500/10 bg-neutral-950">
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <img src="/images/car-ba.png" alt="Car detailing before and after" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-8 pt-20">
+                  <p className="text-2xl font-black text-white">Car & Vehicle Detailing</p>
+                  <p className="text-neutral-300">Barn find to showroom shine.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="group rounded-3xl overflow-hidden border border-neutral-800 hover:border-blue-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10 bg-neutral-950">
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <img src="/images/boat-ba.png" alt="Boat cleaning before and after" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-8 pt-20">
+                  <p className="text-2xl font-black text-white">Boat & Marine</p>
+                  <p className="text-neutral-300">Hull, deck, upholstery — like new.</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-24 px-4" style={{ background: "#0a0a0a" }}>
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-black mb-3" style={{ fontSize: "clamp(40px,7vw,72px)", letterSpacing: "-0.03em" }}>Pricing</h2>
-          <p className="mb-14 text-lg" style={{ color: "#a3a3a3" }}>Text a photo. Get a firm price. No games.</p>
-          <div className="grid sm:grid-cols-3 gap-6 text-left">
-            <div className="rounded-2xl p-6" style={{ background: "#171717", border: "1px solid #404040" }}>
-              <p className="font-black mb-1" style={{ fontSize: "60px", color: "#10b981", lineHeight: 1 }}>$99</p>
-              <p className="font-semibold text-white mb-3">Small Jobs</p>
-              <ul className="space-y-2 text-sm" style={{ color: "#a3a3a3" }}>
-                {["Single driveway","Walkways","Garbage bins"].map(i => (
-                  <li key={i} className="flex items-center gap-2"><CheckCircle className="w-3.5 h-3.5" style={{ color: "#10b981" }} />{i}</li>
-                ))}
-              </ul>
-            </div>
-            <div className="rounded-2xl p-6 relative" style={{ background: "#171717", border: "2px solid #10b981" }}>
-              <div className="absolute -top-3 right-4 text-xs font-bold px-3 py-1 rounded-full" style={{ background: "#10b981", color: "#0a0a0a" }}>MOST POPULAR</div>
-              <p className="font-black mb-1" style={{ fontSize: "60px", color: "#10b981", lineHeight: 1 }}>$199</p>
-              <p className="font-semibold text-white mb-3">Standard</p>
-              <ul className="space-y-2 text-sm" style={{ color: "#a3a3a3" }}>
-                {["Large driveway","Patio","Deck"].map(i => (
-                  <li key={i} className="flex items-center gap-2"><CheckCircle className="w-3.5 h-3.5" style={{ color: "#10b981" }} />{i}</li>
-                ))}
-              </ul>
-            </div>
-            <div className="rounded-2xl p-6" style={{ background: "linear-gradient(135deg, rgba(245,158,11,0.1), #171717)", border: "1px solid rgba(245,158,11,0.4)" }}>
-              <p className="font-black mb-1" style={{ fontSize: "60px", color: "#f59e0b", lineHeight: 1 }}>Custom</p>
-              <p className="font-semibold text-white mb-3">Commercial</p>
-              <ul className="space-y-2 text-sm" style={{ color: "#a3a3a3" }}>
-                {["Awning restore","Building facade","Maintenance plan"].map(i => (
-                  <li key={i} className="flex items-center gap-2"><CheckCircle className="w-3.5 h-3.5" style={{ color: "#f59e0b" }} />{i}</li>
-                ))}
-              </ul>
-            </div>
+      {/* SERVICES */}
+      <section className="py-32 px-6 bg-neutral-950">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-7xl font-black mb-6">What We Clean</h2>
+            <p className="text-xl text-neutral-500">If it's dirty, we fix it.</p>
           </div>
-          <p className="text-sm mt-8" style={{ color: "#737373" }}>Exact quote after a quick text with photos. No hidden fees.</p>
-        </div>
-      </section>
-
-      <section className="py-24 px-4" style={{ background: "#171717" }}>
-        <div className="max-w-5xl mx-auto">
-          <h2 className="font-black text-center mb-3" style={{ fontSize: "clamp(40px,7vw,72px)", letterSpacing: "-0.03em" }}>Why Trust Us</h2>
-          <p className="text-center mb-14 text-lg" style={{ color: "#a3a3a3" }}>Local. Detail-focused.</p>
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+          
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { label: "Local", desc: "Serving White Rock, Northshore & Vancouver." },
-              { label: "Reliable", desc: "Show up on time. Every time." },
-              { label: "Fast", desc: "Text back in 20 min or less." },
-              { label: "Insured", desc: " Zero risk." },
-            ].map((item) => (
-              <div key={item.label} className="rounded-2xl p-6 text-center" style={{ background: "#0a0a0a", border: "1px solid #262626" }}>
-                <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style={{ background: "rgba(16,185,129,0.15)" }}>
-                  <CheckCircle className="w-6 h-6" style={{ color: "#10b981" }} />
+              "Driveways", "Sidewalks", "Patios", "Decks", "Fences", 
+              "Walkways", "Garbage Bins", "Parking Pads", "Stairs",
+              "Cars & Trucks", "Boats & Marine", "Awnings"
+            ].map((service) => (
+              <div key={service} className="group relative bg-neutral-900 border border-neutral-800 rounded-2xl p-8 hover:border-emerald-500/30 hover:bg-neutral-800/50 transition-all duration-300 overflow-hidden">
+                <div className="absolute top-0 right-0 bg-emerald-500/10 text-emerald-500 text-xs font-bold px-3 py-1 rounded-bl-xl opacity-0 group-hover:opacity-100 transition-opacity">
+                  BOOK NOW
                 </div>
-                <p className="font-bold text-white mb-1">{item.label}</p>
-                <p className="text-sm" style={{ color: "#737373" }}>{item.desc}</p>
+                <div className="flex items-center gap-4">
+                  <div className="bg-emerald-500/10 text-emerald-400 p-3 rounded-xl group-hover:bg-emerald-500 group-hover:text-neutral-950 transition-colors">
+                    <CheckCircle className="w-6 h-6" />
+                  </div>
+                  <span className="text-xl font-bold text-neutral-200 group-hover:text-white transition-colors">{service}</span>
+                </div>
               </div>
             ))}
           </div>
-          <div className="mt-10 rounded-3xl p-10 text-center" style={{ border: "2px dashed #404040" }}>
-            <Star className="w-8 h-8 mx-auto mb-3" style={{ color: "#737373" }} />
-            <p className="font-medium" style={{ color: "#737373" }}>Testimonials Coming Soon</p>
-            <p className="text-sm mt-1" style={{ color: "#404040" }}>Add your first review once you complete a job.</p>
+        </div>
+      </section>
+
+      {/* AWNINGS — MONEY BLOCK */}
+      <section className="py-32 px-6 bg-gradient-to-br from-amber-950/30 via-neutral-900 to-neutral-950 border-y border-amber-500/20">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 bg-amber-500 text-neutral-950 rounded-full px-5 py-2 text-sm font-black mb-8">
+                <Sparkles className="w-4 h-4" />
+                HIGHEST MARGIN • BEST ROI
+              </div>
+              <h2 className="text-5xl md:text-6xl font-black text-white mb-8 leading-tight">
+                Awnings for<br />Business
+              </h2>
+              <p className="text-xl text-neutral-400 mb-8 leading-relaxed">
+                Your storefront's first impression is filthy. We clean fabric, vinyl, and metal awnings without damaging signage. Restaurants, retail, offices — this is where you make real money.
+              </p>
+              
+              <div className="grid grid-cols-2 gap-4 mb-10">
+                {[
+                  "No fabric damage",
+                  "Mould & mildew removed", 
+                  "Colour restored",
+                  "Before-hours service"
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-2 text-neutral-300">
+                    <CheckCircle className="w-4 h-4 text-amber-500 shrink-0" />
+                    <span className="text-sm font-medium">{item}</span>
+                  </div>
+                ))}
+              </div>
+              
+              <a
+                href="https://wa.me/17784045267?text=Hi! I need a commercial awning cleaning quote."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 bg-amber-500 hover:bg-amber-400 text-neutral-950 font-black text-lg px-10 py-5 rounded-2xl transition-all shadow-xl shadow-amber-500/20 hover:shadow-amber-500/40 hover:-translate-y-0.5"
+              >
+                <MessageCircle className="w-6 h-6" />
+                Get Commercial Quote
+              </a>
+            </div>
+            
+            <div className="relative rounded-3xl overflow-hidden border-2 border-amber-500/20 shadow-2xl">
+              <img src="/images/awning-ba.png" alt="Commercial awning transformation" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="py-24 px-4 relative overflow-hidden" style={{ background: "#064e3b" }}>
-        <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(circle at center, rgba(16,185,129,0.2) 0%, #064e3b 60%)" }} />
-        <div className="relative max-w-3xl mx-auto text-center">
-          <h2 className="font-black mb-4" style={{ fontSize: "clamp(40px,7vw,72px)", letterSpacing: "-0.03em" }}>Get Your Quote</h2>
-          <p className="text-lg mb-10" style={{ color: "rgba(167,243,208,0.8)" }}>Text your address and a photo. We will reply with a firm price — no upsells, no surprises.</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-            <a href="https://wa.me/17784045267?text=Hi! I need a free pressure washing quote." className="inline-flex items-center justify-center gap-3 font-bold text-lg px-8 py-4 rounded-2xl" style={{ background: "#fff", color: "#064e3b" }}>
-              <MessageCircle className="w-6 h-6" />Text: (236) 874-0586
-            </a>
-            <a href="tel:+17784045267" className="inline-flex items-center justify-center gap-3 font-bold text-lg px-8 py-4 rounded-2xl" style={{ background: "rgba(0,0,0,0.2)", color: "#fff", border: "1px solid rgba(255,255,255,0.2)" }}>
-              <Phone className="w-6 h-6" />Call Now
-            </a>
+      {/* PRICING */}
+      <section className="py-32 px-6 bg-neutral-950">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-7xl font-black mb-6">Pricing</h2>
+            <p className="text-xl text-neutral-500">Text a photo. Get a firm price. No games.</p>
           </div>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center" style={{ color: "rgba(167,243,208,0.7)" }}>
-            <a href="mailto:friendlyconcierge@protonmail" className="flex items-center gap-2 hover:text-white transition-colors"><Mail className="w-5 h-5" />friendlyconcierge@protonmail.com</a>
+          
+          <div className="grid sm:grid-cols-3 gap-6">
+            <div className="bg-neutral-900 rounded-3xl p-10 border border-neutral-800 hover:border-emerald-500/30 transition-all">
+              <p className="text-sm font-bold text-neutral-600 uppercase tracking-widest mb-3">Small</p>
+              <p className="text-6xl font-black text-emerald-400 mb-2">$99</p>
+              <p className="text-neutral-500 mb-8">Single driveway, walkway, bins</p>
+              <div className="h-px bg-neutral-800 mb-8" />
+              <ul className="space-y-3 text-neutral-400">
+                <li className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-emerald-500" /> 1 driveway</li>
+                <li className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-emerald-500" /> Walkway strip</li>
+                <li className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-emerald-500" /> 2-3 bins</li>
+              </ul>
+            </div>
+            
+            <div className="bg-neutral-900 rounded-3xl p-10 border-2 border-emerald-500/30 relative overflow-hidden">
+              <div className="absolute top-0 right-0 bg-emerald-500 text-neutral-950 text-xs font-black px-4 py-2 rounded-bl-xl">
+                MOST POPULAR
+              </div>
+              <p className="text-sm font-bold text-neutral-600 uppercase tracking-widest mb-3">Standard</p>
+              <p className="text-6xl font-black text-emerald-400 mb-2">$199</p>
+              <p className="text-neutral-500 mb-8">Large driveway, patio, deck</p>
+              <div className="h-px bg-neutral-800 mb-8" />
+              <ul className="space-y-3 text-neutral-400">
+                <li className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-emerald-500" /> Double driveway</li>
+                <li className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-emerald-500" /> Full patio</li>
+                <li className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-emerald-500" /> Deck clean</li>
+              </ul>
+            </div>
+            
+            <div className="bg-gradient-to-br from-amber-950/20 to-neutral-900 rounded-3xl p-10 border border-amber-500/20 hover:border-amber-500/40 transition-all">
+              <p className="text-sm font-bold text-amber-500 uppercase tracking-widest mb-3">Commercial</p>
+              <p className="text-6xl font-black text-amber-400 mb-2">Custom</p>
+              <p className="text-neutral-500 mb-8">Awnings, storefronts, multi-unit</p>
+              <div className="h-px bg-neutral-800 mb-8" />
+              <ul className="space-y-3 text-neutral-400">
+                <li className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-amber-500" /> Awning restore</li>
+                <li className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-amber-500" /> Restaurant facade</li>
+                <li className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-amber-500" /> Maintenance plan</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
-      <footer className="py-6 text-center text-sm" style={{ background: "#0a0a0a", borderTop: "1px solid #262626", color: "#737373" }}>
+      {/* TRUST */}
+      <section className="py-32 px-6 bg-neutral-900">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-7xl font-black mb-6">Why Trust Us</h2>
+            <p className="text-xl text-neutral-500">Local. Insured. Obsessive.</p>
+          </div>
+          
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+            {[
+              { label: "Local", desc: "Vancouver born. We know the mould." },
+              { label: "Reliable", desc: "Show up on time. Every time." },
+              { label: "Fast", desc: "Text back in 20 min or less." },
+              { label: "Insured", desc: "Full liability. Zero risk." },
+            ].map((item) => (
+              <div key={item.label} className="bg-neutral-950 rounded-2xl p-10 border border-neutral-800 text-center hover:border-emerald-500/20 hover:shadow-lg hover:shadow-emerald-500/5 transition-all">
+                <div className="bg-emerald-500/10 text-emerald-400 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <CheckCircle className="w-8 h-8" />
+                </div>
+                <p className="font-bold text-xl text-white mb-3">{item.label}</p>
+                <p className="text-neutral-500">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-neutral-950 border-2 border-dashed border-neutral-800 rounded-3xl p-16 text-center">
+            <Star className="w-12 h-12 text-neutral-700 mx-auto mb-6" />
+            <p className="text-neutral-500 font-bold text-xl mb-3">Testimonials Coming Soon</p>
+            <p className="text-neutral-600 max-w-md mx-auto">Complete your first job, screenshot the 5-star text review, and drop it here. One review doubles conversion.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* CONTACT */}
+      <section className="py-32 px-6 bg-emerald-950 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-emerald-800/20 via-emerald-950 to-emerald-950" />
+        
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
+          <h2 className="text-5xl md:text-7xl font-black mb-8">Get Your Quote</h2>
+          <p className="text-2xl text-emerald-200/80 mb-12 max-w-2xl mx-auto">
+            Text your address and a photo. We'll reply with a firm price — no upsells, no surprises.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+            <a
+              href="https://wa.me/17784045267?text=Hi! I need a free pressure washing quote. My address is: "
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center justify-center gap-3 bg-white text-emerald-950 font-black text-2xl px-12 py-6 rounded-2xl hover:bg-emerald-50 transition-all shadow-2xl hover:-translate-y-1"
+            >
+              <MessageCircle className="w-8 h-8" />
+              WhatsApp: (778) 404-5267
+              <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+            </a>
+            <a
+              href="tel:+17784045267"
+              className="inline-flex items-center justify-center gap-3 bg-emerald-900 text-white font-bold text-2xl px-12 py-6 rounded-2xl hover:bg-emerald-800 transition-colors border border-emerald-700"
+            >
+              <Phone className="w-7 h-7" />
+              Call Now
+            </a>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-10 justify-center items-center text-emerald-300/60">
+            <a href="mailto:youremail@example.com" className="flex items-center gap-3 hover:text-white transition-colors text-lg">
+              <Mail className="w-5 h-5" />
+              youremail@example.com
+            </a>
+            <a href="https://tiktok.com/@yourhandle" target="_blank" className="flex items-center gap-3 hover:text-white transition-colors text-lg">
+              <MessageCircle className="w-5 h-5" />
+              @yourhandle
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="bg-neutral-950 text-neutral-700 py-10 text-center text-sm border-t border-neutral-900">
         <p>© {new Date().getFullYear()} Pressure Wash Vancouver. All rights reserved.</p>
       </footer>
     </main>
