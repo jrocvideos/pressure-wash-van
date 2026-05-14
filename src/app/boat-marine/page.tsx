@@ -40,7 +40,7 @@ export default function BoatMarine() {
               </div>
             </div>
             <div className="relative rounded-3xl overflow-hidden border-2 border-blue-500/20 shadow-2xl">
-              <img src="/images/boat-ba.png" alt="Boat cleaning before and after" className="w-full h-full object-cover" />
+              <img src="/images/boat-marine-ba.png" alt="Boat cleaning before and after" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
