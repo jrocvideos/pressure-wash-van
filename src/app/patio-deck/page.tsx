@@ -39,11 +39,8 @@ export default function PatioDeck() {
                 </a>
               </div>
             </div>
-            <div className="relative rounded-3xl overflow-hidden border-2 border-teal-500/20 shadow-2xl bg-neutral-900 flex items-center justify-center aspect-[4/3]">
-              <div className="text-center p-8">
-                <p className="text-2xl font-black text-white mb-2">Patio & Deck</p>
-                <p className="text-neutral-400">Before/after photo coming soon</p>
-              </div>
+            <div className="relative rounded-3xl overflow-hidden border-2 border-teal-500/20 shadow-2xl aspect-[4/3]">
+              <img src="/images/patio-deck-ba.png" alt="Patio and deck before and after" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
