@@ -40,7 +40,7 @@ export default function Commercial() {
               </div>
             </div>
             <div className="relative rounded-3xl overflow-hidden border-2 border-amber-500/20 shadow-2xl">
-              <img src="/images/awning-ba.png" alt="Commercial awning cleaning" className="w-full h-full object-cover" />
+              <img src="/images/commercial-ba.png" alt="Commercial awning cleaning" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
